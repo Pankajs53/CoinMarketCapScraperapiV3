@@ -13,9 +13,9 @@ def create_excel_file(scraped_data):
         circulating_supply = coin_data.get('circulating_supply', None)
         total_supply = coin_data.get('total_supply', None)
         diluted_market_cap = coin_data.get('diluted_market_cap', None)
-        contracts = coin_data.get('contracts', [])
-        official_links = coin_data.get('official_links', [])
-        socials = coin_data.get('socials', {})
+        # contracts = coin_data.get('contracts', [])
+        # official_links = coin_data.get('official_links', [])
+        # socials = coin_data.get('socials', {})
 
         # Create a DataFrame from the extracted data
         data = {
