@@ -2,17 +2,21 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 import logging
-logger = logging.getLogger(__name__)
-# create your views here
 
+
+# myapp/views.py
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.views import View
 from celery.result import AsyncResult
+from myceleryproject.celery import scrape_task
+import json
 import logging
+from .helper import create_excel_file
+
+from celery.result import AsyncResult
 
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-
 
 logger = logging.getLogger(__name__)
 
@@ -34,25 +38,6 @@ def about(request):
 
 def contact(request):
     return render(request,'myapp/contact.html')
-
-
-
-# views.py
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-import json
-
-# myapp/views.py
-from django.http import JsonResponse
-from django.views import View
-from celery.result import AsyncResult
-from myceleryproject.celery import scrape_task
-import json
-import logging
-from .models import CryptoCoin,Contract,OfficialLink,Social
-from .helper import create_excel_file
-
-logger = logging.getLogger(__name__)
 
 
 
