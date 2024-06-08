@@ -1,6 +1,6 @@
 import os
 from celery import Celery,shared_task
-from .services import CoinMarketCap
+from .CoinMarketCap import CoinMarketCap
 import logging
 
 logger = logging.getLogger(__name__)
