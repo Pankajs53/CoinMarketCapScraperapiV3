@@ -21,11 +21,3 @@ app.autodiscover_tasks()
 def scrape_task(coin_name):
     scraper = CoinMarketCap(coin_name)
     return scraper.scrape_data()
-
-# def scrape_task(self, coin_name):
-#     try:
-#         service = ScraperService(coin_name)
-#         result = service.scrape_data()
-#         return result
-#     except Exception as e:
-#         self.retry(exc=e, countdown=60)
